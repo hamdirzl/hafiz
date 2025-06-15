@@ -11,7 +11,7 @@
 <body>
 
     <header class="full-width-header">
-        </header>
+    </header>
 
     <section class="banner-slider">
         <div class="slider-container">
@@ -102,31 +102,29 @@
                 <i class="fas fa-comments"></i>
                 <span>Channels</span>
             </a>
-            <a href="#music" class="menu-icon-card music-standalone">
+            <a href="#music" class="menu-icon-card">
                 <i class="fas fa-music"></i>
                 <span>Music</span>
             </a>
         </section>
 
         <section id="music" class="section-block music-section">
+            <button class="back-to-menu-btn"><i class="fas fa-arrow-left"></i> Kembali</button>
             <h2>Music</h2>
-            <div class="music-player-container">
+            <h3>Dengarkan Karyaku</h3>
+            <div class="music-player-container" style="margin-bottom: 20px;">
                 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/YOUR_SPOTIFY_ARTIST_ID?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                <h3>Dengarkan Lebih Banyak Karyaku</h3>
-                <div class="music-links">
-                    <a href="https://open.spotify.com/artist/YOUR_SPOTIFY_ARTIST_ID" target="_blank" class="music-link-btn spotify">
-                        <i class="fab fa-spotify"></i> Spotify
-                    </a>
-                    <a href="https://music.apple.com/us/artist/YOUR_APPLE_MUSIC_ARTIST_ID" target="_blank" class="music-link-btn apple-music">
-                        <i class="fab fa-apple"></i> Apple Music
-                    </a>
-                </div>
+            </div>
+            <div class="music-player-container">
+                <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="152" style="width:100%; max-width:660px; overflow:hidden; border-radius:12px; background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/id/album/nama-album/12345678?i=12345679"></iframe>
+                <p style="font-size: 0.8em; text-align: center; margin-top: 5px;"><strong>Penting:</strong> Anda perlu mengganti URL 'src' di atas dengan kode embed dari Apple Music Anda.</p>
             </div>
         </section>
 
         <hr>
 
         <section id="about" class="section-block">
+            <button class="back-to-menu-btn"><i class="fas fa-arrow-left"></i> Kembali</button>
             <h2>About Me</h2>
             <div class="about-content">
                 <p>Halo! Aku Mhaafizz, seorang kreator yang passionate di bidang fashion dan musik. Aku percaya bahwa fashion adalah bentuk ekspresi diri, dan musik adalah bahasa universal yang menghubungkan kita semua...</p>
@@ -138,6 +136,7 @@
         <hr>
 
         <section id="portfolio" class="section-block">
+            <button class="back-to-menu-btn"><i class="fas fa-arrow-left"></i> Kembali</button>
             <h2>Portofolio</h2>
             <div class="search-bar">
                 <input type="text" placeholder="Cari proyek di Portofolio..." id="portfolioSearchInput">
@@ -156,12 +155,13 @@
                     <p>Konsep pemotretan fashion di lingkungan perkotaan.</p>
                     <button class="view-detail-btn" data-modal="portfolio-modal-2">Lihat Detail</button>
                 </div>
-                </div>
+            </div>
         </section>
 
         <hr>
 
         <section id="fashion" class="section-block">
+            <button class="back-to-menu-btn"><i class="fas fa-arrow-left"></i> Kembali</button>
             <h2>Fashion</h2>
             <div class="search-bar">
                 <input type="text" placeholder="Cari outfit atau gaya..." id="fashionSearchInput">
@@ -180,12 +180,13 @@
                     <p>Gaun merah yang menawan untuk acara spesial.</p>
                     <button class="view-detail-btn" data-modal="fashion-modal-2">Detail Outfit</button>
                 </div>
-                </div>
+            </div>
         </section>
 
         <hr>
 
         <section id="photos" class="section-block">
+            <button class="back-to-menu-btn"><i class="fas fa-arrow-left"></i> Kembali</button>
             <h2>Photos</h2>
             <div class="search-bar">
                 <input type="text" placeholder="Cari foto berdasarkan judul..." id="photosSearchInput">
@@ -202,12 +203,13 @@
                     <h3>Momen di Belakang Panggung</h3>
                     <p>Keseruan persiapan sebelum tampil.</p>
                 </div>
-                </div>
+            </div>
         </section>
 
         <hr>
 
         <section id="blog" class="section-block">
+            <button class="back-to-menu-btn"><i class="fas fa-arrow-left"></i> Kembali</button>
             <h2>Blog</h2>
             <div class="blog-list">
                 <div class="blog-link-item">
@@ -218,12 +220,13 @@
                     <h3><a href="https://mhaafizzblog.com/proses-kreatif-lagu-baru" target="_blank">Di Balik Layar: Proses Kreatif Lagu "Mimpi"</a></h3>
                     <p>Intip bagaimana aku menciptakan melodi dan lirik untuk lagu terbaruku.</p>
                 </div>
-                </div>
+            </div>
         </section>
 
         <hr>
 
         <section id="channels" class="section-block">
+            <button class="back-to-menu-btn"><i class="fas fa-arrow-left"></i> Kembali</button>
             <h2>Channels</h2>
             <div class="channel-feed">
                 <div class="feed-post">
@@ -244,31 +247,49 @@
                         <span>💬 20</span>
                     </div>
                 </div>
-                </div>
+            </div>
         </section>
 
         <div id="portfolio-modal-1" class="modal">
             <div class="modal-content">
-                <span class="close-btn">&times;</span>
+                <span class="close-btn">×</span>
                 <h3>Proyek Desain Web: MyBrand.com</h3>
                 <img src="images/portfolio1.jpg" alt="Proyek Desain A">
                 <p>Ini adalah proyek desain website e-commerce yang aku kembangkan dari awal, meliputi wireframing, UI/UX design, hingga implementasi front-end. Fokus utama adalah user experience yang intuitif dan visual yang menarik sesuai branding klien.</p>
                 <p><strong>Teknologi:</strong> HTML, CSS, JavaScript, Figma</p>
                 <p><strong>Tahun:</strong> 2024</p>
-                </div>
+            </div>
+        </div>
+        
+        <div id="portfolio-modal-2" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">×</span>
+                <h3>Editorial Fotografi: "Urban Style"</h3>
+                <img src="images/portfolio2.jpg" alt="Proyek Fotografi B">
+                <p>Deskripsi detail untuk proyek fotografi Urban Style.</p>
+            </div>
         </div>
 
         <div id="fashion-modal-1" class="modal">
             <div class="modal-content">
-                <span class="close-btn">&times;</span>
+                <span class="close-btn">×</span>
                 <h3>Daily Look: Cozy Denim</h3>
                 <img src="images/fashion1.jpg" alt="Outfit Hoodie Denim">
                 <p>Paduan yang sempurna antara kenyamanan dan gaya urban. Hoodie abu-abu oversized dipadukan dengan jaket denim vintage, celana jogger hitam, dan sneakers putih. Cocok untuk hangout santai atau beraktivitas di luar.</p>
                 <p><strong>Brands:</strong> Hoodie (Uniqlo), Jaket (Levi's Vintage), Celana (Adidas), Sneakers (Nike Air Force 1)</p>
                 <p><strong>Inspirasi:</strong> Streetwear, Comfort Casual</p>
-                </div>
+            </div>
         </div>
-        </main>
+
+        <div id="fashion-modal-2" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">×</span>
+                <h3>Evening Glam: The Red Dress</h3>
+                <img src="images/fashion2.jpg" alt="Outfit Evening Dress">
+                <p>Deskripsi detail untuk outfit evening glam.</p>
+            </div>
+        </div>
+    </main>
 
     <footer class="site-footer">
         <p>© 2025 Mhaafizz. All Rights Reserved.</p>
