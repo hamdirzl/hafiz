@@ -130,21 +130,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- JavaScript untuk Smooth Scroll dari Icon Menu ---
-    document.querySelectorAll('.menu-icon-card').forEach(iconCard => {
+    // --- JavaScript untuk Menampilkan/Menyembunyikan Section ---
+    const menuIconCards = document.querySelectorAll('.menu-icon-card');
+    const contentSections = document.querySelectorAll('.section-block:not(#music)'); // Pilih semua section-block KECUALI music
+    const musicSection = document.getElementById('music'); // Pilih section music secara terpisah
+    const sectionSeparators = document.querySelectorAll('.hidden-section-separator');
+
+    // Sembunyikan semua section dan pemisah saat halaman dimuat
+    contentSections.forEach(section => {
+        section.classList.add('hidden-section');
+        section.classList.remove('active-section');
+    });
+    musicSection.classList.add('hidden-section'); // Sembunyikan music juga
+    musicSection.classList.remove('active-section');
+    sectionSeparators.forEach(separator => {
+        separator.classList.add('hidden-section');
+        separator.classList.remove('active-section'); // Pastikan tidak ada active-section pada separator
+    });
+
+    menuIconCards.forEach(iconCard => {
         iconCard.addEventListener('click', function (e) {
             e.preventDefault();
 
-            const targetId = this.getAttribute('href'); // Ambil href dari a tag
-            const targetSection = document.querySelector(targetId);
+            const targetId = this.dataset.target; // Ambil data-target dari a tag
+            const targetSection = document.getElementById(targetId);
 
+            // Sembunyikan semua section dan pemisah terlebih dahulu
+            contentSections.forEach(section => {
+                section.classList.remove('active-section');
+                section.classList.add('hidden-section');
+            });
+            musicSection.classList.remove('active-section');
+            musicSection.classList.add('hidden-section');
+
+            sectionSeparators.forEach(separator => {
+                separator.classList.remove('active-section');
+                separator.classList.add('hidden-section');
+            });
+
+            // Tampilkan section yang sesuai
             if (targetSection) {
-                const headerOffset = document.querySelector('.full-width-header').offsetHeight + document.querySelector('.social-icons-below-banner').offsetHeight + 40; // Menyesuaikan offset jika ada elemen fixed di atas
+                // Beri sedikit delay untuk transisi opacity agar terlihat smooth
+                setTimeout(() => {
+                    targetSection.classList.remove('hidden-section');
+                    targetSection.classList.add('active-section');
 
-                window.scrollTo({
-                    top: targetSection.offsetTop - headerOffset,
-                    behavior: 'smooth'
-                });
+                    // Tampilkan pemisah di bawah section yang baru diaktifkan (jika ada)
+                    const nextSibling = targetSection.nextElementSibling;
+                    if (nextSibling && nextSibling.classList.contains('hidden-section-separator')) {
+                        nextSibling.classList.remove('hidden-section');
+                        nextSibling.classList.add('active-section');
+                    }
+                }, 10); // Sedikit delay
             }
         });
     });
@@ -162,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!searchInput || !contentGrid) return; // Pastikan elemen ada
 
-        searchInput.addEventListener('keyup', (e) => {
+        const applyFilter = () => {
             const searchTerm = searchInput.value.toLowerCase().trim();
 
             itemCards.forEach(card => {
@@ -176,25 +213,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.style.display = 'none'; // Sembunyikan kartu
                 }
             });
-        });
+        };
+
+        searchInput.addEventListener('keyup', applyFilter);
 
         // Tambahkan event listener untuk tombol cari juga
         const searchButton = searchInput.nextElementSibling; // Asumsi tombol tepat setelah input
         if (searchButton && searchButton.tagName === 'BUTTON') {
-             searchButton.addEventListener('click', () => {
-                const searchTerm = searchInput.value.toLowerCase().trim();
-                itemCards.forEach(card => {
-                    const title = card.querySelector('h3') ? card.querySelector('h3').innerText.toLowerCase() : '';
-                    const description = card.querySelector('p') ? card.querySelector('p').innerText.toLowerCase() : '';
-                    const tags = card.dataset.tags ? card.dataset.tags.toLowerCase() : '';
-
-                    if (title.includes(searchTerm) || description.includes(searchTerm) || tags.includes(searchTerm)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-             });
+             searchButton.addEventListener('click', applyFilter);
         }
     }
 
