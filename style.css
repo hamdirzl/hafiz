@@ -199,7 +199,7 @@ img {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 kolom */
     gap: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 40px; /* Jarak dari grid ke section pertama yang mungkin muncul */
 }
 
 .menu-icon-card {
@@ -246,6 +246,28 @@ img {
         width: 100%; /* Full width di mobile */
     }
 }
+
+/* SECTIONS BARU UNTUK DISPLAY/HIDE */
+.hidden-section {
+    display: none; /* Sembunyikan secara default */
+    opacity: 0; /* Untuk transisi opacity */
+    transition: opacity 0.5s ease-in-out; /* Transisi untuk display */
+}
+
+.active-section {
+    display: block; /* Tampilkan elemen */
+    opacity: 1; /* Transisi opacity */
+}
+
+/* Optional: Styling untuk pemisah HR yang disembunyikan */
+.hidden-section-separator {
+    display: none; /* Sembunyikan pemisah HR secara default */
+}
+/* Ketika section aktif, pemisah di bawahnya juga bisa ditampilkan jika perlu */
+.active-section + .hidden-section-separator {
+    display: block;
+}
+
 
 /* Sections Umum */
 .section-block {
@@ -415,6 +437,7 @@ hr {
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap; /* Agar tombol wrap ke bawah jika layar kecil */
 }
 
 .music-link-btn {
@@ -436,6 +459,14 @@ hr {
 .music-link-btn.spotify:hover { background: #168a3d; }
 .music-link-btn.apple-music { background: #FC3C44; } /* Warna Apple Music */
 .music-link-btn.apple-music:hover { background: #d02c31; }
+
+/* Styling untuk Apple Music embed placeholder agar mirip Spotify embed */
+.apple-music-embed-placeholder iframe {
+    width: 100%;
+    height: 152px; /* Set height similar to Spotify embed */
+    border-radius: 12px;
+    margin-bottom: 20px; /* Jarak dari embed ke H3 di bawahnya */
+}
 
 
 /* Channels (Weverse-like) */
