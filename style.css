@@ -234,19 +234,6 @@ img {
     font-weight: bold;
 }
 
-/* Penyesuaian untuk ikon Music yang sendiri di tengah (Jika masih dibutuhkan) */
-/* .music-standalone {
-    grid-column: 1 / -1; 
-    margin: 0 auto;
-    width: 50%;
-} */
-
-@media (max-width: 768px) {
-    /* .music-standalone {
-        width: 100%;
-    } */
-}
-
 /* SECTIONS BARU UNTUK DISPLAY/HIDE */
 .hidden-section {
     display: none; /* Sembunyikan secara default */
@@ -377,26 +364,6 @@ hr {
     color: #555;
 }
 
-/* Tombol Detail untuk Item Card (Tidak akan digunakan lagi jika modal dihapus) */
-.view-detail-btn {
-    display: none; /* Sembunyikan tombol detail karena modal sudah dihapus */
-    width: calc(100% - 30px);
-    margin: 0 15px 15px;
-    padding: 10px 0;
-    background: var(--accent-color);
-    color: var(--text-light);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    font-family: var(--font-heading);
-    transition: background 0.3s ease;
-}
-
-.view-detail-btn:hover {
-    background: #c0392b;
-}
-
 /* About Me */
 .about-content {
     display: flex;
@@ -463,15 +430,6 @@ hr {
 .music-link-btn.spotify:hover { background: #168a3d; }
 .music-link-btn.apple-music { background: #FC3C44; } /* Warna Apple Music */
 .music-link-btn.apple-music:hover { background: #d02c31; }
-
-/* Styling untuk Apple Music embed placeholder (tidak lagi relevan tapi tetap di sini jika suatu saat dibutuhkan) */
-/* .apple-music-embed-placeholder iframe {
-    width: 100%;
-    height: 152px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-} */
-
 
 /* Channels (Weverse-like) */
 .channel-feed {
@@ -579,81 +537,6 @@ hr {
     color: var(--text-light);
 }
 
-/* --- MODAL (POPUP) STYLES (Tidak digunakan lagi, tapi tetap ada jika suatu saat dibutuhkan) --- */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
-    justify-content: center;
-    align-items: center;
-    padding-top: 60px; /* Jarak dari atas */
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 30px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 700px;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-}
-
-/* Add Animation */
-@keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
-}
-
-.close-btn {
-    color: #aaa;
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-content h3 {
-    font-family: var(--font-heading);
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-.modal-content img {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: contain; /* agar gambar tidak ter-crop, tapi muat penuh */
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.modal-content p {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    color: #555;
-}
-
 /* --- RESPONSIVE DESIGN (Media Queries) --- */
 @media (max-width: 768px) {
     .full-width-header::before {
@@ -675,10 +558,6 @@ hr {
     .menu-icons-grid {
         grid-template-columns: 1fr; /* Satu kolom di layar kecil */
     }
-
-    /* .music-standalone {
-        width: 100%;
-    } */
 
     .section-block {
         padding: 30px 15px;
@@ -709,15 +588,6 @@ hr {
 
     .music-player-container {
         padding: 15px;
-    }
-
-    .modal-content {
-        width: 95%;
-        padding: 20px;
-    }
-
-    .modal-content h3 {
-        font-size: 1.5em;
     }
 }
 
