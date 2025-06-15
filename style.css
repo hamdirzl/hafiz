@@ -234,17 +234,17 @@ img {
     font-weight: bold;
 }
 
-/* Penyesuaian untuk ikon Music yang sendiri di tengah */
-.music-standalone {
-    grid-column: 1 / -1; /* Mengambil seluruh lebar grid */
-    margin: 0 auto; /* Tengah secara horizontal */
-    width: 50%; /* Lebar bisa disesuaikan */
-}
+/* Penyesuaian untuk ikon Music yang sendiri di tengah (Jika masih dibutuhkan) */
+/* .music-standalone {
+    grid-column: 1 / -1; 
+    margin: 0 auto;
+    width: 50%;
+} */
 
 @media (max-width: 768px) {
-    .music-standalone {
-        width: 100%; /* Full width di mobile */
-    }
+    /* .music-standalone {
+        width: 100%;
+    } */
 }
 
 /* SECTIONS BARU UNTUK DISPLAY/HIDE */
@@ -377,10 +377,10 @@ hr {
     color: #555;
 }
 
-/* Tombol Detail untuk Item Card */
+/* Tombol Detail untuk Item Card (Tidak akan digunakan lagi jika modal dihapus) */
 .view-detail-btn {
-    display: block;
-    width: calc(100% - 30px); /* Kurangi padding */
+    display: none; /* Sembunyikan tombol detail karena modal sudah dihapus */
+    width: calc(100% - 30px);
     margin: 0 15px 15px;
     padding: 10px 0;
     background: var(--accent-color);
@@ -435,9 +435,10 @@ hr {
 .music-links {
     margin-top: 15px;
     display: flex;
+    flex-direction: column; /* Ubah ke kolom untuk susunan vertikal */
     justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap; /* Agar tombol wrap ke bawah jika layar kecil */
+    align-items: center; /* Tengah elemen dalam kolom */
+    gap: 15px; /* Jarak antar tombol */
 }
 
 .music-link-btn {
@@ -448,6 +449,9 @@ hr {
     color: var(--text-light);
     font-weight: bold;
     transition: background 0.3s ease;
+    width: 100%; /* Tombol memenuhi lebar container */
+    max-width: 250px; /* Batasi lebar agar tidak terlalu lebar */
+    justify-content: center; /* Tengah konten di dalam tombol */
 }
 
 .music-link-btn i {
@@ -460,13 +464,13 @@ hr {
 .music-link-btn.apple-music { background: #FC3C44; } /* Warna Apple Music */
 .music-link-btn.apple-music:hover { background: #d02c31; }
 
-/* Styling untuk Apple Music embed placeholder agar mirip Spotify embed */
-.apple-music-embed-placeholder iframe {
+/* Styling untuk Apple Music embed placeholder (tidak lagi relevan tapi tetap di sini jika suatu saat dibutuhkan) */
+/* .apple-music-embed-placeholder iframe {
     width: 100%;
-    height: 152px; /* Set height similar to Spotify embed */
+    height: 152px;
     border-radius: 12px;
-    margin-bottom: 20px; /* Jarak dari embed ke H3 di bawahnya */
-}
+    margin-bottom: 20px;
+} */
 
 
 /* Channels (Weverse-like) */
@@ -575,7 +579,7 @@ hr {
     color: var(--text-light);
 }
 
-/* --- MODAL (POPUP) STYLES --- */
+/* --- MODAL (POPUP) STYLES (Tidak digunakan lagi, tapi tetap ada jika suatu saat dibutuhkan) --- */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -672,9 +676,9 @@ hr {
         grid-template-columns: 1fr; /* Satu kolom di layar kecil */
     }
 
-    .music-standalone {
-        width: 100%; /* Full width di mobile */
-    }
+    /* .music-standalone {
+        width: 100%;
+    } */
 
     .section-block {
         padding: 30px 15px;
