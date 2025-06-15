@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mhaafizz Official Website</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght=400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
                 <div class="banner-text">
                     <h2>Rilis Lagu Baru: "Harmoni Jiwa"</h2>
                     <p>Dengar Sekarang di Semua Platform!</p>
-                    <a href="#" class="btn">Dengar</a>
+                    <a href="#music" class="btn">Dengar</a>
                 </div>
             </div>
             <div class="slider-item">
@@ -28,7 +28,7 @@
                 <div class="banner-text">
                     <h2>H-7 Ulang Tahun Mhaafizz!</h2>
                     <p>Nantikan Kejutan Spesial!</p>
-                    <a href="#" class="btn">Info Lebih Lanjut</a>
+                    <a href="#about" class="btn">Info Lebih Lanjut</a>
                 </div>
             </div>
             <div class="slider-item">
@@ -36,7 +36,7 @@
                 <div class="banner-text">
                     <h2>Album Terbaru Segera Hadir!</h2>
                     <p>Pre-save Sekarang Juga!</p>
-                    <a href="#" class="btn">Pre-save</a>
+                    <a href="#music" class="btn">Pre-save</a>
                 </div>
             </div>
             <div class="slider-item">
@@ -44,7 +44,7 @@
                 <div class="banner-text">
                     <h2>Event Meet & Greet!</h2>
                     <p>Dapatkan Tiketmu Sekarang!</p>
-                    <a href="#" class="btn">Beli Tiket</a>
+                    <a href="https://www.your-ticketing-website.com" target="_blank" class="btn">Beli Tiket</a>
                 </div>
             </div>
             <div class="slider-item">
@@ -52,7 +52,7 @@
                 <div class="banner-text">
                     <h2>Kolaborasi Spesial!</h2>
                     <p>Bersama Brand X, Cek Koleksinya!</p>
-                    <a href="#" class="btn">Lihat Koleksi</a>
+                    <a href="#fashion" class="btn">Lihat Koleksi</a>
                 </div>
             </div>
             <div class="slider-item">
@@ -60,7 +60,7 @@
                 <div class="banner-text">
                     <h2>Terima Kasih Atas Dukungannya!</h2>
                     <p>Bersama Kita Wujudkan Mimpi!</p>
-                    <a href="#" class="btn">Baca Pesan</a>
+                    <a href="#blog" class="btn">Baca Pesan</a>
                 </div>
             </div>
         </div>
@@ -102,20 +102,16 @@
                 <i class="fas fa-comments"></i>
                 <span>Channels</span>
             </a>
-            <a href="#music" class="menu-icon-card" data-target="music">
-                <i class="fas fa-music"></i>
-                <span>Music</span>
-            </a>
         </section>
 
-        <section id="music" class="section-block music-section hidden-section">
+        <section id="music" class="section-block music-section">
             <h2>Music</h2>
             <div class="music-player-container">
                 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/YOUR_SPOTIFY_ARTIST_ID?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 
                 <h3>Dengarkan Lebih Banyak Karyaku</h3>
                 <div class="music-links">
-                    <a href="https://open.spotify.com/artist/YOUR_SPOTIFY_ARTIST_ID" target="_blank" class="music-link-btn spotify">
+                    <a href="https://open.spotify.com/artist/4fSCZIYc7CvZtv4FLscmpX?si=RRRuQdqVT_GgWzJCHuT48w" target="_blank" class="music-link-btn spotify">
                         <i class="fab fa-spotify"></i> Spotify
                     </a>
                     <a href="https://music.apple.com/id/artist/mhaafizz/1814380169" target="_blank" class="music-link-btn apple-music">
@@ -125,7 +121,7 @@
             </div>
         </section>
 
-        <hr class="hidden-section-separator hidden-section"> 
+        <hr class="hidden-section-separator"> 
 
         <section id="about" class="section-block hidden-section">
             <h2>About Me</h2>
@@ -149,13 +145,11 @@
                     <img src="images/portfolio1.jpg" alt="Proyek Desain A">
                     <h3>Proyek Desain Web: MyBrand.com</h3>
                     <p>Pengembangan identitas visual dan website interaktif.</p>
-                    <button class="view-detail-btn" data-modal="portfolio-modal-1">Lihat Detail</button>
                 </div>
                 <div class="item-card" data-tags="fotografi, fashion, editorial">
                     <img src="images/portfolio2.jpg" alt="Proyek Fotografi B">
                     <h3>Editorial Fotografi: "Urban Style"</h3>
                     <p>Konsep pemotretan fashion di lingkungan perkotaan.</p>
-                    <button class="view-detail-btn" data-modal="portfolio-modal-2">Lihat Detail</button>
                 </div>
             </div>
         </section>
@@ -173,13 +167,11 @@
                     <img src="images/fashion1.jpg" alt="Outfit Hoodie Denim">
                     <h3>Daily Look: Cozy Denim</h3>
                     <p>Paduan hoodie lembut dengan jaket denim yang stylish.</p>
-                    <button class="view-detail-btn" data-modal="fashion-modal-1">Detail Outfit</button>
                 </div>
                 <div class="item-card fashion-item-card" data-tags="elegan, pesta, dress">
                     <img src="images/fashion2.jpg" alt="Outfit Evening Dress">
                     <h3>Evening Glam: The Red Dress</h3>
                     <p>Gaun merah yang menawan untuk acara spesial.</p>
-                    <button class="view-detail-btn" data-modal="fashion-modal-2">Detail Outfit</button>
                 </div>
             </div>
         </section>
@@ -228,7 +220,7 @@
             <h2>Channels</h2>
             <div class="channel-feed">
                 <div class="feed-post">
-                    <p class="post-date">15 Juni 2025</p>
+                    <p class="post-date">16 Juni 2025</p>
                     <p>"Hai semua! Hari ini aku lagi photoshoot untuk proyek baru, excited banget! Siap-siap ya!"</p>
                     <img src="images/channel-post1.jpg" alt="Post Channel">
                     <div class="post-actions">
@@ -237,7 +229,7 @@
                     </div>
                 </div>
                 <div class="feed-post">
-                    <p class="post-date">12 Juni 2025</p>
+                    <p class="post-date">13 Juni 2025</p>
                     <p>"Lagi dengerin playlist ini buat inspirasi. Ada yang suka juga?"</p>
                     <img src="images/channel-post2.jpg" alt="Post Channel Musik">
                     <div class="post-actions">
