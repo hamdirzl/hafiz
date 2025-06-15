@@ -131,13 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- JavaScript untuk Menampilkan/Menyembunyikan Section ---
-    // Sekarang hanya memilih section yang HARUS disembunyikan/ditampilkan oleh klik ikon
-    const contentSections = document.querySelectorAll('.section-block:not(#music-below-channels)'); 
+    const menuIconCards = document.querySelectorAll('.menu-icon-card');
+    const contentSections = document.querySelectorAll('.section-block'); // Pilih semua section-block
     const sectionSeparators = document.querySelectorAll('.hidden-section-separator');
-    const menuIconCards = document.querySelectorAll('.menu-icon-card'); // Ini yang sekarang hanya 6 ikon (tanpa musik)
 
-    // Sembunyikan semua section yang dikelola oleh ikon menu saat halaman dimuat
-    // Pastikan #music-below-channels TIDAK disembunyikan
+    // Sembunyikan semua section dan pemisah saat halaman dimuat
     contentSections.forEach(section => {
         section.classList.add('hidden-section');
         section.classList.remove('active-section');
@@ -154,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = this.dataset.target; // Ambil data-target dari a tag
             const targetSection = document.getElementById(targetId);
 
-            // Sembunyikan semua section yang dikelola oleh ikon menu terlebih dahulu
+            // Sembunyikan semua section dan pemisah terlebih dahulu
             contentSections.forEach(section => {
                 section.classList.remove('active-section');
                 section.classList.add('hidden-section');
@@ -224,5 +222,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- JavaScript untuk Modals (Popup Detail) - INI DIHAPUS KARENA MODAL DIHAPUS ---
-    // (bagian ini dikomentari/dihapus seperti sebelumnya)
+    // const detailButtons = document.querySelectorAll('.view-detail-btn');
+    // const modals = document.querySelectorAll('.modal');
+    // const closeButtons = document.querySelectorAll('.close-btn');
+
+    // detailButtons.forEach(button => {
+    //     button.addEventListener('click', () => {
+    //         const modalId = button.dataset.modal;
+    //         const targetModal = document.getElementById(modalId);
+    //         if (targetModal) {
+    //             targetModal.style.display = 'flex';
+    //         }
+    //     });
+    // });
+
+    // closeButtons.forEach(button => {
+    //     button.addEventListener('click', () => {
+    //         const parentModal = button.closest('.modal');
+    //         if (parentModal) {
+    //             parentModal.style.display = 'none';
+    //         }
+    //     });
+    // });
+
+    // window.addEventListener('click', (event) => {
+    //     modals.forEach(modal => {
+    //         if (event.target == modal) {
+    //             modal.style.display = 'none';
+    //         }
+    //     });
+    // });
 });
