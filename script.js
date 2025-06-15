@@ -132,8 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- JavaScript untuk Menampilkan/Menyembunyikan Section ---
     const menuIconCards = document.querySelectorAll('.menu-icon-card');
-    const contentSections = document.querySelectorAll('.section-block:not(#music)'); // Pilih semua section-block KECUALI music
-    const musicSection = document.getElementById('music'); // Pilih section music secara terpisah
+    const contentSections = document.querySelectorAll('.section-block'); // Pilih semua section-block
     const sectionSeparators = document.querySelectorAll('.hidden-section-separator');
 
     // Sembunyikan semua section dan pemisah saat halaman dimuat
@@ -141,11 +140,9 @@ document.addEventListener('DOMContentLoaded', () => {
         section.classList.add('hidden-section');
         section.classList.remove('active-section');
     });
-    musicSection.classList.add('hidden-section'); // Sembunyikan music juga
-    musicSection.classList.remove('active-section');
     sectionSeparators.forEach(separator => {
         separator.classList.add('hidden-section');
-        separator.classList.remove('active-section'); // Pastikan tidak ada active-section pada separator
+        separator.classList.remove('active-section'); 
     });
 
     menuIconCards.forEach(iconCard => {
@@ -160,8 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 section.classList.remove('active-section');
                 section.classList.add('hidden-section');
             });
-            musicSection.classList.remove('active-section');
-            musicSection.classList.add('hidden-section');
 
             sectionSeparators.forEach(separator => {
                 separator.classList.remove('active-section');
@@ -188,10 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- JavaScript untuk Fungsionalitas Search Bar (Contoh) ---
-    // Ini adalah implementasi dasar. Untuk data yang sangat banyak,
-    // disarankan menggunakan data terstruktur (array of objects)
-    // atau mengambil dari API.
-
     function filterContent(searchInputId, contentGridId, itemCardSelector) {
         const searchInput = document.getElementById(searchInputId);
         const contentGrid = document.getElementById(contentGridId);
@@ -230,36 +221,35 @@ document.addEventListener('DOMContentLoaded', () => {
     filterContent('photosSearchInput', 'photosGrid', '.photo-card');
 
 
-    // --- JavaScript untuk Modals (Popup Detail) ---
-    const detailButtons = document.querySelectorAll('.view-detail-btn');
-    const modals = document.querySelectorAll('.modal');
-    const closeButtons = document.querySelectorAll('.close-btn');
+    // --- JavaScript untuk Modals (Popup Detail) - INI DIHAPUS KARENA MODAL DIHAPUS ---
+    // const detailButtons = document.querySelectorAll('.view-detail-btn');
+    // const modals = document.querySelectorAll('.modal');
+    // const closeButtons = document.querySelectorAll('.close-btn');
 
-    detailButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const modalId = button.dataset.modal;
-            const targetModal = document.getElementById(modalId);
-            if (targetModal) {
-                targetModal.style.display = 'flex'; // Gunakan flex untuk centering
-            }
-        });
-    });
+    // detailButtons.forEach(button => {
+    //     button.addEventListener('click', () => {
+    //         const modalId = button.dataset.modal;
+    //         const targetModal = document.getElementById(modalId);
+    //         if (targetModal) {
+    //             targetModal.style.display = 'flex';
+    //         }
+    //     });
+    // });
 
-    closeButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const parentModal = button.closest('.modal');
-            if (parentModal) {
-                parentModal.style.display = 'none';
-            }
-        });
-    });
+    // closeButtons.forEach(button => {
+    //     button.addEventListener('click', () => {
+    //         const parentModal = button.closest('.modal');
+    //         if (parentModal) {
+    //             parentModal.style.display = 'none';
+    //         }
+    //     });
+    // });
 
-    // Tutup modal jika klik di luar konten
-    window.addEventListener('click', (event) => {
-        modals.forEach(modal => {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        });
-    });
+    // window.addEventListener('click', (event) => {
+    //     modals.forEach(modal => {
+    //         if (event.target == modal) {
+    //             modal.style.display = 'none';
+    //         }
+    //     });
+    // });
 });
